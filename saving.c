@@ -12,6 +12,10 @@ void load_map_state () {
 
     FILE *map = fopen("map.txt", "r");
 
+    if(map == NULL) {
+        return;
+    }
+
     int id;
     double x, y;
     char buffer[20];
