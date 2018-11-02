@@ -1,0 +1,72 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Short Sectioned Assignment
+% LaTeX Template
+% Version 1.0 (5/5/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel} % English language/hyphenation
+
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+\setlength{\parskip}{1em}
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+\normalfont \normalsize 
+\textsc{Instytut Informatyki UWr} \\ [25pt] % Your university, school and/or department name(s)
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge Edsger - prosty nawigator \\ % The assignment title
+\horrule{0.5pt} \\[0.4cm] % Thick bottom horizontal rule
+}
+
+\author{Jakub Zadrożny} % Your name
+
+\date{\normalsize\today} % Today's date or a custom date
+
+\begin{document}
+\pagenumbering{gobble}
+
+\maketitle % Print the title
+
+\section*{Opis projektu}
+
+Celem projektu Edsger jest stworzenie aplikacji służącej do nawigacji użytkownika po zadanej sieci komunikacyjnej. Podstawową funkcją programu będzie wytyczenie najkrótszej ścieżki pomiędzy wybranymi przez użytkownika wierzchołkami oraz zaprezentowanie znalezionego rozwiązania.
+
+Sieć komunikacyjna, na której aplikacja będzie pracować, będzie przechowywana w postaci grafu o etykietowanych wierzchołkach połączonych skierowanymi, ważonymi krawędziami. W czasie działania programu stale dostępny będzie podgląd obecnego stanu sieci. Graf tworzony będzie przez użytkownika za pomocą interfejsu graficznego. Program udostępni następujące operacje na sieci:
+\begin{itemize}
+\item dodanie nowego wierzchołka z etykietą,
+\item edycja położenia lub etykiety istniejącego już wierzchołka,
+\item usunięcie wierzchołka z sieci,
+\item połączenie dwóch wierzchołków krawędzią,
+\item usunięcie istniejącej krawędzi.
+\end{itemize}
+Edycja grafu będzie możliwa w każdym momencie działania programu. Aplikacja będzie przechowywać stan sieci pomiędzy uruchomieniami poprzez zapisywanie danych w odpowiednich plikach.
+
+Aplikacja umożliwi również wykonywanie zapytań o najkrótszą ścieżkę z wierzchołka $A$ do wierzchołka $B$. W odpowiedzi na takie zapytanie program zaznaczy poszukiwaną ścieżkę osobnym kolorem na grafie i wyświetli podsumowanie trasy zawierające m.in. łączną długość ścieżki i wskazówki nawigacyjne ``krok po kroku''.
+
+\end{document}

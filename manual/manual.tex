@@ -1,0 +1,100 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Short Sectioned Assignment
+% LaTeX Template
+% Version 1.0 (5/5/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel} % English language/hyphenation
+
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\normalfont\scshape} % Make all sections centered, the default font and small caps
+
+\setlength{\parskip}{1em}
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{
+\normalfont \normalsize
+\textsc{Instytut Informatyki Uniwersytetu Wrocławskiego} \\ [25pt] % Your university, school and/or department name(s)
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge Edsger - prosty nawigator \\ % The assignment title
+\horrule{0.5pt} \\[0.4cm] % Thick bottom horizontal rule
+}
+
+\author{Jakub Zadrożny} % Your name
+
+\date{\normalsize\today} % Today's date or a custom date
+
+\begin{document}
+\pagenumbering{gobble}
+
+\maketitle % Print the title
+
+\section{Wymagania}
+Do poprawnego skompilowania programu potrzebna jest biblioteka GTK+ w wersji 3.10 lub wyższej oraz narzędzie \texttt{make}.
+
+\noindent Wspierane systemu operacyjne: macOS i Linux.
+\section{Kompilacja}
+Aby skompilować program, należy wydać polecenie \texttt{make} w katalogu głównym aplikacji.
+\section{Instrukcja obsługi}
+Aplikacja składa się z dwóch głównych części -- mapy sieci komunikacyjnej
+(szary obszar po lewej stronie) oraz panelu sterowania (biały obszar po prawej stronie).
+
+\noindent Poniżej znajdują się instrukcje wykonania operacji udostępnianych przez program:
+\begin{enumerate}
+    \item Dodawanie wierzchołka do mapy -- aby dodać nowy wierzchołek do mapy, należy wcisnąć przycisk ,,Add vertex''.
+    \item Usuwanie wierzchołka z mapy -- aby usunąć wierzchołek z mapy, należy kliknąć go prawym przyciskiem myszy,
+        po czym wybrać opcję ,,Destroy vertex'' z rozwijanego menu.
+    \item Edycja etykiety wierzchołka -- aby zmienić etykietę wierzchołka, należy kliknąć go prawym przyciskiem myszy,
+        po czym wybrać opcję ,,Edit label'' z rozwijanego menu. W nowo otwartym okienku należy wpisać nową etykietę, po czym
+        kliknąć przycisk ,,OK''.
+    \item Dodawanie krawędzi do mapy -- aby dodać nową krawędź skierowaną do mapy, należy kliknąć prawym przyciskiem myszy
+        na wierzchołek startowy, po czym wybrać opcję ,,New edge'', przesunąć kursor nad wierzchołek docelowy i kliknąć go lewym
+        przyciskiem myszy.
+    \item Usuwanie krawędzi z mapy -- aby usunąć krawędź z mapy, należy kliknąć prawym przyciskiem w okolicy strzałki kierunkowej
+        wybranej krawędzi, po czym wybrać opcję ,,Remove edge'' z rozwijanego menu.
+    \item Zmiana wagi krawędzi -- aby zmienić wagę krawędzi, należy kliknąć prawym przyciskiem myszy w okolicy strzałki kierunkowej
+        wybranej krawędzi, po czym wybrać opcję ,,Edit weight'' z rozwijanego menu. W nowo otwartym okienku należy podać nową wagę
+        krawędzi i wcisnąć przycisk ,,OK''.
+    \item Wyszukiwanie najkrótszej ścieżki pomiędzy zadanymi wierzchołkami -- aby znaleźć najkrótzą scieżkę pomiędzy dwoma wierzchołkami,
+        należy wpisać (lub wybrać z rozwijanej listy) etykietę wierzchołka startowego oraz docelowego, po czym wcisnąć przycisk
+        ,,Find route''.
+    \item Zapisywanie stanu mapy do pliku -- aby zapisać aktualny stan mapy, należy użyć przycisku ,,Save map''.
+    \item Ładowanie stanu mapy z pliku -- aby wczytać stan mapy z pliku, należy użyć przycisku ,,Load map''.
+\end{enumerate}
+
+\section{Struktura programu}
+Aplikacja składa się z pliku głównego \texttt{main.c} oraz następujących czterech modułów:
+\begin{itemize}
+    \item \texttt{interface} -- odpowiedzialnego za obsługę interfejsu graficznego,
+    \item \texttt{graph} -- odpowiedzialnego za przechowywanie grafu i wykonywanie na nim operacji,
+    \item \texttt{list} -- implementującego zmodyfikowaną strukturę listy,
+    \item \texttt{saving} -- odpowiedzialnego za zapisywanie oraz ładowanie mapy.
+\end{itemize}
+
+\noindent Dodatkowo w folderze znajduje się również plik \texttt{Makefile} odpowiedzialny za usprawnienie procesu kompilacji.
+
+\end{document}
